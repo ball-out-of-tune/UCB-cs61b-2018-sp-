@@ -36,7 +36,8 @@ public class NBody {
         StdDraw.setXscale(-radius, radius);
         StdDraw.setYscale(-radius,radius);
         StdDraw.enableDoubleBuffering();
-
+        String audioFileName = "audio/2001.mid";
+        StdAudio.play(audioFileName);
         double time = 0;
         for (time = 0; time < T; time += dT){
             double[] xForces = new double[len];
