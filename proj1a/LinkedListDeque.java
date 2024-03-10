@@ -25,6 +25,7 @@ public class LinkedListDeque<T> {
         TNode newNode = new TNode(item);
         newNode.next = sentinel.next;
         newNode.prev = sentinel;
+        sentinel.next.prev = newNode;
         sentinel.next = newNode;
 //        sentinel.prev = newNode;
         if (isEmpty()) {
@@ -37,6 +38,7 @@ public class LinkedListDeque<T> {
         TNode newNode = new TNode(item);
         newNode.next = sentinel;
         newNode.prev = sentinel.prev;
+        sentinel.prev.next = newNode;
         sentinel.prev = newNode;
         if (isEmpty()) {
             sentinel.next = newNode;
