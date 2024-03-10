@@ -104,22 +104,26 @@ public class IntList {
         //TODO:  fill in method
         if (A == null)
             return B;
-        IntList newIntListA = new IntList(A.first, null);
-        IntList newIntListB = new IntList(B.first, null);
-        IntList pA = newIntListA;
-        while (A.rest != null) {
-            pA.rest = new IntList(A.rest.first, null);
-            A = A.rest;
-            pA = pA.rest;
+        else if (B == null)
+            return A;
+        else {
+            IntList newIntListA = new IntList(A.first, null);
+            IntList newIntListB = new IntList(B.first, null);
+            IntList pA = newIntListA;
+            while (A.rest != null) {
+                pA.rest = new IntList(A.rest.first, null);
+                A = A.rest;
+                pA = pA.rest;
+            }
+            IntList pB = newIntListB;
+            while (B.rest != null) {
+                pB.rest = new IntList(B.rest.first, null);
+                B = B.rest;
+                pB = pB.rest;
+            }
+            pA.rest = newIntListB;
+            return newIntListA;
         }
-        IntList pB = newIntListB;
-        while (B.rest != null) {
-            pB.rest = new IntList(B.rest.first, null);
-            B = B.rest;
-            pB = pB.rest;
-        }
-        pA.rest = newIntListB;
-        return newIntListA;
     }
 
 
