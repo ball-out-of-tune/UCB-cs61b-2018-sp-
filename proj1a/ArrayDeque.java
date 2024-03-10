@@ -73,11 +73,9 @@ public class ArrayDeque<T> {
     public T get(int index) {
         if (index > capacity || index < 0) {
             return null;
-        }
-        else if (index > last || index < first) {
+        } else if (index > last || index < first) {
             return array[index];
-        }
-        else {
+        } else {
             return null;
         }
     }
